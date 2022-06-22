@@ -3,7 +3,8 @@ let rightAns,
     rightNumber = 0;
 falseNumber = 0;
 const clear = document.getElementById("clear");
-
+let falseNumberFromLocalStorage;
+let rightNumberFromLocalStorage;
 document.addEventListener('DOMContentLoaded', function () {
     AddQuestion();
     evenListeners();
@@ -28,9 +29,10 @@ const questionHTML = document.createElement('div');
 questionHTML.classList.add('col-12');
 // la fonction qui permet d'afficher les questions
 showQuestion = questions => {
+    
  
-    const rightNumberFromLocalStorage = JSON.parse(localStorage.getItem("rightNumber"));
-    const falseNumberFromLocalStorage = JSON.parse(localStorage.getItem("falseNumber"));
+   rightNumberFromLocalStorage = JSON.parse(localStorage.getItem("rightNumber"));
+   falseNumberFromLocalStorage = JSON.parse(localStorage.getItem("falseNumber"));
     
     questions.forEach(question => {
         console.log(question);
@@ -79,6 +81,7 @@ showQuestion = questions => {
     });
 }
 
+
 selectAnswer = (e) => {
     // if pour pouvoir desactiver le hover sur les autres reponses, le hover doit s'appliquer uniquement sur la reponse ou on a cliqué
     if (document.querySelector('.active')) {
@@ -112,11 +115,13 @@ validateAnswer = () => {
 verifyAnswer = () => {
     const userAnswer = document.querySelector('.questions .active');
     if(userAnswer.textContent === rightAns) {
-        rightNumber++;
-        localStorage.setItem("rightNumber", JSON.stringify(rightNumber));
+        // rightNumber++;
+        rightNumberFromLocalStorage ++
+        localStorage.setItem("rightNumber", JSON.stringify(rightNumberFromLocalStorage));
     } else {
-         falseNumber++;
-         localStorage.setItem("falseNumber", JSON.stringify(falseNumber));
+        //  falseNumber++;
+        falseNumberFromLocalStorage++
+         localStorage.setItem("falseNumber", JSON.stringify(falseNumberFromLocalStorage));
     }
     //console.log(answer)
 const app = document.querySelector('#app');
