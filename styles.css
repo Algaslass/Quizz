@@ -1,0 +1,56 @@
+
+
+body {
+    background-image: url(pexels-tetyana-kovyrina-1067109.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.quest-box {
+    background: rgba(255, 255, 255, 0.51);
+    padding: 32px;
+    margin-top: 100px;
+    
+}
+
+.questions li{
+    list-style-type: none;
+    padding-left: 0;
+    background-color: #079cff;
+    padding: 16px!important;
+    margin-bottom: 16px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.questions li.active{
+    background: #080079;
+    color: #fff;
+}
+
+p.category {
+    font-size: 20px;
+}
+p.difficulty {
+    font-size: 20px;
+}
+
+.heading{
+    margin-bottom: 32px;
+
+}
+.badge{
+    font-size: 32px;
+}
+.btn-primary{
+    color: #fff;
+    font-size: 24px;
+
+}
+.btn-danger{
+    font-size: 24px;
+    color: #fff;
+}
